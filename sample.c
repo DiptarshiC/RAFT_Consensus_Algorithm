@@ -14,7 +14,21 @@ int main(int argc, char** argv) {
 	// Initialize the MPI environment. The two arguments to MPI Init are not
 	// currently used by MPI implementations, but are there in case future
 	// implementations might need the arguments.
-	MPI_Init(NULL, NULL);
+
+	int p;
+
+	p=MPI_Init(NULL, NULL);
+
+	if(p == MPI_SUCCESS)
+	{
+		printf(" MPI initiated successfully. No error ");
+	}
+
+	else
+	{
+		printf(" Problem in initializing MPI ! ");
+
+	}
 
 	// Get the number of processes
 	int world_size;
